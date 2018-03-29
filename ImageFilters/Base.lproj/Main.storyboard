@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rgf-eh-fYG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
+            <string>AvenirNext-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="N1n-sJ-3s0">
+            <objects>
+                <viewController id="AU2-g1-c27" customClass="ViewController" customModule="CoreImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P31-5b-kEj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upload" translatesAutoresizingMaskIntoConstraints="NO" id="NIh-Ei-NVF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NIh-Ei-NVF" secondAttribute="height" multiplier="1:1" id="Z6r-IG-3pJ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plJ-PT-Fbc">
+                                <rect key="frame" x="24" y="619.5" width="327" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhO-dG-xPP">
+                                <rect key="frame" x="24" y="463" width="327" height="27.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Agj-pl-GVd" firstAttribute="trailing" secondItem="EhO-dG-xPP" secondAttribute="trailing" constant="24" id="7JB-17-cq5"/>
+                            <constraint firstItem="plJ-PT-Fbc" firstAttribute="leading" secondItem="Agj-pl-GVd" secondAttribute="leading" constant="24" id="Ctc-FX-Wia"/>
+                            <constraint firstItem="Agj-pl-GVd" firstAttribute="trailing" secondItem="plJ-PT-Fbc" secondAttribute="trailing" constant="24" id="Ej4-41-D6o"/>
+                            <constraint firstItem="EhO-dG-xPP" firstAttribute="leading" secondItem="Agj-pl-GVd" secondAttribute="leading" constant="24" id="MhR-m4-LSx"/>
+                            <constraint firstItem="Agj-pl-GVd" firstAttribute="bottom" secondItem="plJ-PT-Fbc" secondAttribute="bottom" constant="24" id="QVw-ht-ufC"/>
+                            <constraint firstItem="NIh-Ei-NVF" firstAttribute="leading" secondItem="Agj-pl-GVd" secondAttribute="leading" id="XNb-aH-33W"/>
+                            <constraint firstItem="EhO-dG-xPP" firstAttribute="top" secondItem="NIh-Ei-NVF" secondAttribute="bottom" constant="24" id="ZoL-ue-fNL"/>
+                            <constraint firstItem="Agj-pl-GVd" firstAttribute="trailing" secondItem="NIh-Ei-NVF" secondAttribute="trailing" id="pia-lF-Jey"/>
+                            <constraint firstItem="NIh-Ei-NVF" firstAttribute="top" secondItem="Agj-pl-GVd" secondAttribute="top" id="r6d-yh-jq5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Agj-pl-GVd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lBF-pj-Umz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="LCq-Hu-RGJ">
+                            <connections>
+                                <action selector="uploadImage:" destination="AU2-g1-c27" id="v8Z-Uo-P26"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" tag="1" systemItem="camera" id="G9i-MF-3jB">
+                            <connections>
+                                <action selector="uploadImage:" destination="AU2-g1-c27" id="Tv4-bT-zlN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="displayLabel" destination="plJ-PT-Fbc" id="Y30-JZ-a9W"/>
+                        <outlet property="filterNameLabel" destination="EhO-dG-xPP" id="pbg-K7-jyi"/>
+                        <outlet property="imageView" destination="NIh-Ei-NVF" id="V6j-PS-vQC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CtY-7D-TVM" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="33.733133433283363"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lma-1J-EYS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rgf-eh-fYG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H5v-IY-hc9">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AU2-g1-c27" kind="relationship" relationship="rootViewController" id="1xl-1W-X5O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hl7-n3-9Qw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-439" y="34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="upload" width="512" height="512"/>
+    </resources>
+</document>
